@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WinJSDemo</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- WinJSDemo references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/underscore-min.js"></script>
+    <script src="/js/default.js"></script>
+    <script src="/search/searchResults.js"></script>
+</head>
+<body>
+    <h1>Twitter Search</h1>
+    <div>
+        <h2>Enter a new query</h2>
+        <input type="text" id="search-term" /> <input type="button" id="search-button" value="Search"/>
+        <div data-win-control="WinJS.UI.ToggleSwitch" 
+            data-win-options="{ title: 'Update', checked: true }" 
+            id="toggle-update"></div>
+    </div>
+    <div id="search-results"></div>
+
+    <div data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{ id: 'abc-refresh', label: 'Refresh', icon: 'sync', type: 'Button' }"></button>
+    </div>
+
+    <script type="text/html" id="search-result-template">
+        <div class="result-title"><%= term %></div>
+        <div class="result-content">
+            <% _.each(results, function(result) { %>
+            <div class="result-body">
+                <div class="result-image">
+                    <img src="<%= result.profile_image_url %>" />
+                </div>
+                <div class="result-from">
+                    <%= result.from_user %>
+                </div>
+                <div class="result-text">
+                    <%= result.text %>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </script>
+</body>
+</html>
