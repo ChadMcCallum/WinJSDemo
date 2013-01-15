@@ -56,10 +56,7 @@
     }
 
     app.oncheckpoint = function (args) {
-        var toggleState = document.getElementById("toggle-switch").winControl.checked;
-        WinJS.Application.sessionState.toggleState = toggleState;
-
-        Windows.Storage.ApplicationData.current.roamingSettings.values["searches"] = JSON.stringify(app.searches);
+        
     };
 
     app.start();
