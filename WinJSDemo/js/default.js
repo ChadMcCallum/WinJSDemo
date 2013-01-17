@@ -27,6 +27,10 @@
             CreateSearchResult(term);
             searchTerm.value = "";
         };
+
+        setInterval(function () {
+            _.each(app.searches, updateSearch);
+        }, 10 * 1000);
     }
 
     function CreateSearchResult(term) {
