@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows 8
+# Visual Studio 2012
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "WinJSDemo", "WinJSDemo\WinJSDemo.jsproj", "{CE0F95A1-14F3-4B2F-9688-3D46646D2B6E}"
 EndProject
 Global
@@ -42,5 +42,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal
