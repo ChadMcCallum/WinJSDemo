@@ -1,7 +1,7 @@
 WinJSDemo
 =========
 
-Demo app showing how to make a HTML &amp; JS based app for Windows 8
+Demo app showing how to make a HTML &amp; JS based app for Windows 8.  Refer to [the presentation](http://www.slideshare.net/RTigger/windows-8-programming-with-html-and-java-script) fore more info
 
 This app is a small twitter client used to highlight how easy it is to create a windows 8 application using WinJS.  
 Some of its features:
