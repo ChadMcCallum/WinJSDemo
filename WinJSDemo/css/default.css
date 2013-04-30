@@ -1,48 +1,28 @@
-﻿/* This is the default CSS file in the WinJS blank template.  It provides default media queries for the 4 app layouts*/
-body {
-}
-/* This is the 'default' style we want for the search-results div.  By default, we display twitter search results
-    in a 6 column grid
-    We also use the microsoft grid layout style here: we're defining 6 columns of equal width (1 fraction of the total width)
-    and one row of automatic height
-    Because this is how we want all divs to appear by default, we put it at the top of the file - styles are applied sequentially */
+﻿body {}
+
 div#search-results {
     display: -ms-grid;
     -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     -ms-grid-rows: auto;
 }
 
-/* also the default style for each result-content div*/
 div.result-content {
     height: 850px;
     overflow: hidden;
 }
 
-/* these are windows 8-specific media queries for different application layouts. These allow us to change the style of our apps
-    without having to write a line of javascript. */
 @media screen and (-ms-view-state: fullscreen-landscape) {
 }
 
 @media screen and (-ms-view-state: filled) {
 }
 
-/* when we're in snapped view (the 1/5th left-or-right column view), display the twitter results in a list as opposed to a grid
-    and also shrink the size of each result so we can see more than one */
 @media screen and (-ms-view-state: snapped) {
-    div#search-results
-    {
-        display: block;
-    }
-    div.result-content
-    {
-        height: 200px;
-    }
+
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
 }
-
-/* pretty much everything else is standard CSS */
 
 div.search-result {
     border-radius: 5px;
@@ -70,7 +50,6 @@ div.result-body {
     background-color: #26282A;
 }
 
-/* here's an example of how to place a cell within the grid layout: 1st column (not 0-based), 1st row, with a rowspan of 2 */
 div.result-image {
     -ms-grid-column: 1;
     -ms-grid-row: 1;

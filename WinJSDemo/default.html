@@ -3,55 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <title>WinJSDemo</title>
-
-    <!-- WinJS references -->
-    <!-- These are references included by default in all WinJS projects.
-        If you want more detail, explore the References item in the Solution Explorer
-        You can see the source code for all 3 items
-        -->
     <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
-
-    <!-- WinJSDemo references -->
-    <!-- This is a reference to the standard Underscore javascript library from underscorejs.org
-        It is an unmodified copy of the original source, to demonstrate how you can include 
-        every day javascript files in your WinJS projects
-        We use it for its templating engine as well as some iterators
-        -->
     <script src="/js/underscore-min.js"></script>
-    <!-- These are the two files that they create for you when you start a new blank project 
-        They include the event handlers and application logic, as well as the CSS for the application
-        -->
     <link href="/css/default.css" rel="stylesheet" />
     <script src="/js/default.js"></script>
 </head>
 <body>
-    <h1>Twitter Search!</h1>
-    <div>
-        <p>Enter a term to look for on twitter</p>
-        <input type="text" id="search-term" />
-        <input type="button" value="Search" id="search-button" />
+    <div class="pagecontrol fragment">
+        <header aria-label="Header content" role="banner">
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Twitter Search!</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div>
+                <p>Enter a term to look for on twitter</p>
+                <input type="text" id="search-term" />
+                <input type="button" value="Search" id="search-button" />
+            </div>
+            <div id="search-results">
+            </div>
+        </section>
     </div>
-    <!-- to create a WinJS control, you just need to specify the data-win-control attribute
-        The WinJS.UI.processAll method then inserts the HTML and JS needed in its place
-        You can also pass a json object to initialize the control with through data-win-options
-        A list of controls you can make is here: http://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx
-        -->
-    <div id="toggle-update" data-win-control="WinJS.UI.ToggleSwitch"
-        data-win-options="{ checked: true, title: 'Update' }"></div>
-    <div id="search-results">
-    </div>
-    <!-- the AppBar is a Windows 8 specific control that provides application options 
-        through a control at the top or bottom of the screen.
-        WinJS will automatically display and configure this for you using the information below
-        -->
-    <div data-win-control="WinJS.UI.AppBar">
-        <button data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{ id: 'refresh', label: 'Refresh', icon: 'sync', type: 'Button' }"
-    </div>
-    <!-- this is an underscore template we use to populate each individual search result
-        See: http://underscorejs.org/#template -->
     <script type="text/html" id="search-result-template">
         <div class="result-title"><%= term %></div>
         <div class="result-content">
